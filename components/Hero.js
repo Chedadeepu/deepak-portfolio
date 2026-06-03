@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Avatar from "./Avatar";
+import { content } from "@/content";
 
 const Scene3D = dynamic(() => import("./Scene3D"), { ssr: false });
 
@@ -18,7 +19,7 @@ const word = {
   },
 };
 
-const headline = ["Building", "Digital", "Experiences", "That", "People", "Remember."];
+const headline = content.profile.headline;
 
 export default function Hero() {
   return (
@@ -43,7 +44,7 @@ export default function Hero() {
             className="glass mb-7 inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-xs text-white/70"
           >
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-            Available for select collaborations
+            {content.profile.availabilityBadge}
           </motion.div>
 
           <motion.h1
@@ -57,7 +58,7 @@ export default function Hero() {
                 <motion.span
                   variants={word}
                   className={`inline-block ${
-                    w === "Remember." ? "text-gradient" : ""
+                    i === headline.length - 1 ? "text-gradient" : ""
                   }`}
                 >
                   {w}
@@ -72,8 +73,7 @@ export default function Hero() {
             transition={{ delay: 1.1, duration: 0.8 }}
             className="mt-7 max-w-md text-lg font-light leading-relaxed text-white/55"
           >
-            I'm Deepak — a creative developer crafting AI products, web apps, and
-            interactive experiences at the edge of design and engineering.
+            {content.profile.intro}
           </motion.p>
 
           <motion.div

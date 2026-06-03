@@ -1,6 +1,13 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { content } from "@/content";
+
+const c = content.contact;
+// split heading so the last word gets the gradient highlight
+const words = c.heading.trim().split(" ");
+const headStart = words.slice(0, -1).join(" ");
+const headLast = words[words.length - 1];
 
 function Magnetic({ children, className = "", ...rest }) {
   const ref = useRef(null);
@@ -64,14 +71,12 @@ export default function Contact() {
         transition={{ duration: 0.8 }}
         className="font-display text-5xl font-extrabold leading-[0.95] tracking-tight md:text-8xl"
       >
-        Let's Build Something
+        {headStart}
         <br />
-        <span className="text-gradient">Unforgettable.</span>
+        <span className="text-gradient">{headLast}</span>
       </motion.h2>
 
-      <p className="mx-auto mt-6 max-w-md text-white/55">
-        Have an idea, a role, or a wild experiment in mind? I'd love to hear it.
-      </p>
+      <p className="mx-auto mt-6 max-w-md text-white/55">{c.subtext}</p>
 
       {/* form */}
       <form
@@ -80,7 +85,7 @@ export default function Contact() {
           const data = new FormData(e.target);
           const subject = encodeURIComponent(`Hello from ${data.get("name")}`);
           const body = encodeURIComponent(data.get("message"));
-          window.location.href = `mailto:deepakvutla9@gmail.com?subject=${subject}&body=${body}`;
+          window.location.href = `mailto:${c.email}?subject=${subject}&body=${body}`;
           setSent(true);
         }}
         className="glass mx-auto mt-12 max-w-xl rounded-3xl p-6 text-left md:p-8"
@@ -118,24 +123,19 @@ export default function Contact() {
 
       {/* floating socials */}
       <div className="mt-14 flex flex-wrap items-center justify-center gap-4">
-        {[
-          ["Email", "mailto:deepakvutla9@gmail.com"],
-          ["GitHub", "#"],
-          ["Twitter / X", "#"],
-          ["LinkedIn", "#"],
-        ].map(([label, href]) => (
+        {c.socials.map((s) => (
           <Magnetic
-            key={label}
-            href={href}
+            key={s.label}
+            href={s.href}
             className="glass rounded-full px-6 py-3 text-sm transition-colors hover:text-purple-glow"
           >
-            {label}
+            {s.label}
           </Magnetic>
         ))}
       </div>
 
       <footer className="mt-24 text-sm text-white/35">
-        Designed &amp; built by Deepak · Made with caffeine and curiosity ✦
+        Designed &amp; built by {content.profile.name} · Made with caffeine and curiosity ✦
       </footer>
     </section>
   );

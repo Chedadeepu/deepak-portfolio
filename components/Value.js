@@ -1,37 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import Reveal, { SectionLabel } from "./Reveal";
+import { content } from "@/content";
 
-const services = [
-  {
-    icon: "✦",
-    title: "AI Engineering & Automation",
-    body: "I turn AI from a buzzword into shipped product — agents, assistants, and automations that remove busywork and let teams focus on what actually moves the needle.",
-    metric: "Cut multi-hour manual workflows down to minutes",
-    points: ["LLM & agent integration", "Workflow automation", "Practical, measurable wins"],
-  },
-  {
-    icon: "◈",
-    title: "Full-Stack Web Engineering",
-    body: "I design and ship complete products — a thoughtful interface down to the data layer. React, Next.js, and modern tooling, built to feel fast, reliable, and effortless.",
-    metric: "Idea to live product in weeks, not quarters",
-    points: ["Responsive, accessible UI", "Robust front & back end", "Production-ready from day one"],
-  },
-  {
-    icon: "❖",
-    title: "Interaction & Motion Design",
-    body: "I make products feel alive. Considered animation, micro-interactions, and 3D that aren't decoration — they guide attention, build trust, and make an experience memorable.",
-    metric: "Interfaces people screenshot and share",
-    points: ["Motion & micro-interactions", "3D & immersive interfaces", "Brand-grade polish"],
-  },
-  {
-    icon: "◆",
-    title: "Product Ownership, End to End",
-    body: "I take full ownership — scoping the problem, shaping the solution, building it, and shipping it. You get a partner who thinks about outcomes, not just tickets.",
-    metric: "One person, zero hand-off gaps",
-    points: ["End-to-end ownership", "Fast, focused iteration", "Clear communication"],
-  },
-];
+const v = content.value;
+const services = v.services;
+// split the heading so the last 3 words get the gradient highlight
+const hWords = v.heading.trim().split(" ");
+const headMain = hWords.slice(0, -3).join(" ");
+const headHi = hWords.slice(-3).join(" ");
 
 export default function Value() {
   return (
@@ -39,16 +16,14 @@ export default function Value() {
       <SectionLabel>What I Bring</SectionLabel>
       <Reveal>
         <h2 className="font-display text-4xl font-bold leading-tight md:text-6xl">
-          I help teams turn ideas into
+          {headMain}
           <br className="hidden md:block" />{" "}
-          <span className="text-gradient">products people remember.</span>
+          <span className="text-gradient">{headHi}</span>
         </h2>
       </Reveal>
       <Reveal delay={0.1}>
         <p className="mt-5 max-w-xl text-lg font-light leading-relaxed text-white/55">
-          Whether you're a founder with a rough sketch or a team that needs an
-          extra pair of hands that thinks like an owner — here's where I add the
-          most value.
+          {v.subheading}
         </p>
       </Reveal>
 
@@ -60,12 +35,12 @@ export default function Value() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
-            Currently available for{" "}
-            <span className="font-medium text-white">freelance &amp; full-time</span>
+            {v.availabilityLine}{" "}
+            <span className="font-medium text-white">{v.availabilityBold}</span>
           </span>
 
           <a
-            href="/Deepak-Resume.pdf"
+            href={v.resumeFile}
             download
             data-magnetic
             className="interactive group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-transform hover:scale-[1.03]"
@@ -127,11 +102,7 @@ export default function Value() {
       <Reveal delay={0.1}>
         <div className="mt-12 rounded-3xl border border-purple/20 bg-gradient-to-r from-purple/[0.08] to-transparent p-8 md:p-10">
           <p className="font-display text-xl font-medium leading-relaxed text-white/85 md:text-2xl">
-            The common thread?{" "}
-            <span className="text-gradient">
-              I sweat the details others skip
-            </span>{" "}
-            — and I build things I'd be proud to put my name on.
+            {v.closingLine}
           </p>
         </div>
       </Reveal>

@@ -2,6 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Reveal, { SectionLabel } from "./Reveal";
+import { content } from "@/content";
+
+const milestones = content.about.milestones;
 
 function Counter({ to, suffix = "" }) {
   const ref = useRef(null);
@@ -29,33 +32,6 @@ function Counter({ to, suffix = "" }) {
   );
 }
 
-const milestones = [
-  {
-    year: "01",
-    phase: "Foundations",
-    title: "Where curiosity met the keyboard",
-    body: "I never wanted to just use software — I wanted to know why it worked. That itch turned into a craft, and the browser became the place I could build anything I imagined.",
-  },
-  {
-    year: "02",
-    phase: "Craft",
-    title: "Designing for people, not screens",
-    body: "Shipping for real users taught me the part no tutorial does: empathy. Every pixel, delay, and word is a decision someone will feel. I learned to sweat the details that go unnoticed when they're right.",
-  },
-  {
-    year: "03",
-    phase: "Intelligence",
-    title: "Teaching products to think",
-    body: "I moved from building interfaces to building systems that reason — AI and automation that quietly carry the load, so people get their time and attention back for what matters.",
-  },
-  {
-    year: "04",
-    phase: "Today",
-    title: "Engineering experiences people remember",
-    body: "Now I live at the intersection of design, motion, and engineering — crafting products that don't just function, but leave an impression. Polished enough to trust, distinctive enough to share.",
-  },
-];
-
 export default function About() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -69,25 +45,23 @@ export default function About() {
       <SectionLabel>The Journey</SectionLabel>
       <Reveal>
         <h2 className="font-display text-4xl font-bold leading-tight md:text-6xl">
-          A story told in <span className="text-gradient">milestones</span>,
-          <br className="hidden md:block" /> not bullet points.
+          {content.about.heading}
         </h2>
       </Reveal>
 
       {/* counters */}
       <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
-        {[
-          { n: 5, s: "+", l: "Products Shipped" },
-          { n: 12, s: "+", l: "Technologies Mastered" },
-          { n: 4, s: "+", l: "Years Building" },
-          { n: 100, s: "%", l: "End-to-End Ownership" },
-        ].map((c, i) => (
+        {content.about.stats.map((c, i) => (
           <Reveal key={i} delay={i * 0.08}>
             <div className="glass rounded-2xl p-6">
               <div className="font-display text-4xl font-bold text-gradient md:text-5xl">
-                <Counter to={c.n} suffix={c.s} />
+                {typeof c.value === "number" ? (
+                  <Counter to={c.value} suffix={c.suffix} />
+                ) : (
+                  <span>{c.value}{c.suffix}</span>
+                )}
               </div>
-              <div className="mt-2 text-sm text-white/50">{c.l}</div>
+              <div className="mt-2 text-sm text-white/50">{c.label}</div>
             </div>
           </Reveal>
         ))}

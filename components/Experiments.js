@@ -1,15 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import Reveal, { SectionLabel } from "./Reveal";
+import { content } from "@/content";
 
-const experiments = [
-  { title: "Generative Avatars", tag: "AI · Design", emoji: "🎨", desc: "Procedural characters that react to cursor, motion, and sound." },
-  { title: "Browser Sound Engine", tag: "Web Audio", emoji: "🎧", desc: "Music synthesized entirely in the browser — zero audio files." },
-  { title: "Voice Interface Lab", tag: "Voice", emoji: "🗣️", desc: "Explorations in natural, expressive speech and conversation flow." },
-  { title: "Motion Playground", tag: "Framer · GSAP", emoji: "✨", desc: "A sandbox of spring physics, magnetic UI, and liquid transitions." },
-  { title: "Prompt Tooling", tag: "LLM Ops", emoji: "🧪", desc: "Small utilities for chaining and testing AI prompts at speed." },
-  { title: "3D Doodles", tag: "Three.js", emoji: "🪐", desc: "Distortion shaders and floating geometry, just for the joy of it." },
-];
+const experiments = content.experiments;
 
 export default function Experiments() {
   return (

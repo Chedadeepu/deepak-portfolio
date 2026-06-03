@@ -2,19 +2,9 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { SectionLabel } from "./Reveal";
+import { content } from "@/content";
 
-const skills = [
-  { name: "React", level: "Expert", x: 50, y: 46, r: 1.0 },
-  { name: "Next.js", level: "Advanced", x: 72, y: 30, r: 0.85 },
-  { name: "Three.js", level: "Intermediate", x: 28, y: 28, r: 0.7 },
-  { name: "Gemini API", level: "Advanced", x: 80, y: 60, r: 0.85 },
-  { name: "Electron", level: "Advanced", x: 22, y: 64, r: 0.78 },
-  { name: "Supabase", level: "Advanced", x: 60, y: 72, r: 0.78 },
-  { name: "Framer Motion", level: "Advanced", x: 40, y: 18, r: 0.72 },
-  { name: "Voice AI", level: "Intermediate", x: 86, y: 44, r: 0.68 },
-  { name: "Node.js", level: "Advanced", x: 14, y: 44, r: 0.75 },
-  { name: "Tailwind", level: "Expert", x: 64, y: 50, r: 0.7 },
-];
+const skills = content.skills;
 
 // edges between nearby nodes for the "network"
 const edges = [

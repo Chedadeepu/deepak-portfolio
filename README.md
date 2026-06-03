@@ -23,6 +23,14 @@ A premium, interactive personal portfolio — built as an award-style storytelli
 - Optional background music with audio-reactive visualizer (saved to localStorage)
 - Full SEO: Open Graph share card, JSON-LD, sitemap & robots
 
+## ✏️ Make it yours — edit ONE file
+
+All editable content (name, headline, about, projects, skills, experiments,
+contact, socials) lives in **[`content.js`](content.js)**. Change the text
+inside the quotes and the whole site updates — no need to touch the components.
+New here? Open `content.js` and follow the comments, or ask an AI assistant:
+*"Help me edit content.js with my details, I'm not technical."*
+
 ## Getting Started
 
 ```bash

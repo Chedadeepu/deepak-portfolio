@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import MusicPlayer from "./MusicPlayer";
+import { content } from "@/content";
 
 const links = [
   { id: "about", label: "About" },
@@ -39,7 +40,7 @@ export default function Nav() {
     >
       <div className="glass flex items-center gap-1 rounded-full p-1.5 pl-5">
         <a href="#top" className="mr-3 text-[15px] font-bold tracking-tight">
-          Deepak<span className="text-purple-glow">.</span>
+          {content.profile.name}<span className="text-purple-glow">.</span>
         </a>
         <div className="hidden items-center gap-0.5 md:flex">
           {links.map((l) => (
@@ -60,9 +61,11 @@ export default function Nav() {
             </a>
           ))}
         </div>
-        <div className="ml-1.5">
-          <MusicPlayer />
-        </div>
+        {content.music?.enabled && (
+          <div className="ml-1.5">
+            <MusicPlayer />
+          </div>
+        )}
       </div>
     </motion.nav>
   );

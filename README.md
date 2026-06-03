@@ -1,8 +1,10 @@
-# Deepak — Portfolio
+# Portfolio Website — Free Starter Template
 
-A premium, interactive personal portfolio — built as an award-style storytelling experience.
+A premium, interactive personal portfolio — built as an award-style storytelling experience. Fork it, make it yours, and ship it for free.
 
-**AI & Full-Stack Engineer** · Building web products, intelligent automation, and interactive experiences people remember.
+> ✨ All your content lives in one file: **[`content.js`](content.js)**. No need to touch the components.
+>
+> 🆓 New to this? There's a friendly, non-technical step-by-step guide: **[BUILD-YOUR-OWN-PORTFOLIO.md](BUILD-YOUR-OWN-PORTFOLIO.md)**.
 
 ## Tech Stack
 

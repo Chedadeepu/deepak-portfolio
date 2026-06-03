@@ -13,13 +13,13 @@
 export const content = {
   // ── YOU ──────────────────────────────────────────────────────────────
   profile: {
-    name: "Deepak", // shown in the top-left logo and around the site
+    name: "Your Name", // shown in the top-left logo and around the site
     // The big hero headline. Each item is one word/line. The LAST one gets
     // the colorful gradient. Keep it short and punchy (4–7 words total).
     headline: ["Building", "Digital", "Experiences", "That", "People", "Remember."],
     // One or two sentences under the headline — who you are, what you do.
     intro:
-      "I'm Deepak — a creative developer crafting AI products, web apps, and interactive experiences at the edge of design and engineering.",
+      "I'm a creative developer crafting web apps and interactive experiences at the edge of design and engineering. (Replace this with your own intro!)",
     // The little status pill at the top of the page.
     availabilityBadge: "Available for select collaborations",
   },
@@ -72,7 +72,7 @@ export const content = {
     availabilityLine: "Currently available for", // followed by the bold part below
     availabilityBold: "freelance & full-time",
     // Drop your résumé PDF into the "public" folder and put its name here.
-    resumeFile: "/Deepak-Resume.pdf",
+    resumeFile: "/resume.pdf",
     // Your services / strengths. Each card has a short metric (a proof point).
     services: [
       {
@@ -237,10 +237,10 @@ export const content = {
   contact: {
     heading: "Let's Build Something Unforgettable.",
     subtext: "Have an idea, a role, or a wild experiment in mind? I'd love to hear it.",
-    email: "deepakvutla9@gmail.com",
+    email: "you@example.com",
     // Put your real links here. Use "#" if you don't have one yet.
     socials: [
-      { label: "Email", href: "mailto:deepakvutla9@gmail.com" },
+      { label: "Email", href: "mailto:you@example.com" },
       { label: "GitHub", href: "#" },
       { label: "Twitter / X", href: "#" },
       { label: "LinkedIn", href: "#" },

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Deepak — AI & Full-Stack Engineer";
+export const alt = "Your Name — Portfolio";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,7 +30,7 @@ export default function OG() {
             fontWeight: 700,
           }}
         >
-          Deepak<span style={{ color: "#fff" }}>.</span>
+          Your Name<span style={{ color: "#fff" }}>.</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -77,7 +77,7 @@ export default function OG() {
               color: "#fff",
             }}
           >
-            AI &amp; Full-Stack Engineer
+            Creative Developer
           </span>
           <span style={{ color: "#34d399" }}>● Available for work</span>
         </div>

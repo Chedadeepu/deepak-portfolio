@@ -13,42 +13,41 @@ const display = Sora({
   variable: "--font-display",
 });
 
-const SITE_URL = "https://deepak.dev"; // ← update to your real domain when you deploy
+// ← update SITE_URL to your real domain when you deploy
+const SITE_URL = "https://your-site.vercel.app";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Deepak — AI & Full-Stack Engineer",
-    template: "%s · Deepak",
+    default: "Your Name — Portfolio",
+    template: "%s · Your Name",
   },
   description:
-    "AI-focused full-stack engineer building web products, intelligent automation, and interactive experiences people remember. Available for freelance & full-time.",
+    "A personal portfolio — building digital experiences that people remember.",
   keywords: [
-    "Deepak",
-    "AI Engineer",
-    "Full-Stack Developer",
-    "React Developer",
+    "Portfolio",
+    "Developer",
+    "Designer",
+    "React",
     "Next.js",
     "Web Developer",
-    "Automation",
-    "Creative Developer",
-    "Portfolio",
+    "Creative",
   ],
-  authors: [{ name: "Deepak" }],
-  creator: "Deepak",
+  authors: [{ name: "Your Name" }],
+  creator: "Your Name",
   openGraph: {
     type: "website",
     url: SITE_URL,
-    title: "Deepak — AI & Full-Stack Engineer",
+    title: "Your Name — Portfolio",
     description:
-      "Building web products, AI automation, and interactive experiences people remember. Available for freelance & full-time.",
-    siteName: "Deepak",
+      "Building digital experiences that people remember.",
+    siteName: "Your Name",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deepak — AI & Full-Stack Engineer",
+    title: "Your Name — Portfolio",
     description:
-      "Building web products, AI automation, and interactive experiences people remember.",
+      "Building digital experiences that people remember.",
   },
   robots: {
     index: true,
@@ -60,19 +59,16 @@ export const metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Deepak",
+  name: "Your Name",
   url: SITE_URL,
-  email: "mailto:deepakvutla9@gmail.com",
-  jobTitle: "AI & Full-Stack Engineer",
+  jobTitle: "Creative Developer",
   description:
-    "AI-focused full-stack engineer building web products, intelligent automation, and interactive experiences.",
+    "A personal portfolio — building digital experiences that people remember.",
   knowsAbout: [
-    "Artificial Intelligence",
     "Web Development",
     "React",
     "Next.js",
-    "Automation",
-    "Interaction Design",
+    "Design",
   ],
 };
 
